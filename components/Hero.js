@@ -17,7 +17,7 @@ export default function Hero() {
                 <div className="mx-auto flex max-w-[1192px] flex-col gap-10 lg:items-center lg:gap-20">
                     <div className="flex flex-col items-start gap-8 lg:items-center lg:gap-10">
                         <div className="flex max-w-[805px] flex-col items-start gap-4 lg:items-center lg:gap-3 lg:text-center">
-                            <h1 className="font-heading text-[52px] font-extrabold leading-[1.1] tracking-[-2px] md:text-[64px] lg:text-[72px]">
+                            <h1 className="font-heading text-[52px] font-extrabold leading-[1.1] tracking-[-2px] md:text-[64px] md:tracking-[-2.56px] lg:text-[72px] lg:tracking-[-2px]">
                                 <span className="bg-[linear-gradient(to_top,rgba(254,159,107,0.4)_45%,transparent_45%)]">
                                     Healthy
                                 </span>{" "}
@@ -25,13 +25,13 @@ export default function Hero() {
                             </h1>
 
                             <p className="text-[20px] leading-[1.5] tracking-[-0.4px] text-ink-soft lg:max-w-[580px]">
-                                Discover eight quick, whole-food recipes that you can cook tonight-no processed junk, no guesswork.
+                                Discover eight quick, whole-food recipes that you can cook tonight—no processed junk, no guesswork.
                             </p>
                         </div>
 
                         <Link 
                             href="/recipes"
-                            className="rounded-[10px] bg-ink px-8 py-4 font-heading text-[20px] font-bold tracking--[-0.5px] text-white transition-colors hover:bg-ink-soft">
+                            className="rounded-[10px] bg-ink px-8 py-4 font-heading text-[20px] font-bold leading-[1.4] tracking-[-0.5px] text-white transition-colors hover:bg-ink-soft">
                                 Start exploring
                         </Link>
                     </div>

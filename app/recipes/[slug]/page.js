@@ -111,7 +111,7 @@ export default async function RecipePage({ params }) {
           <h2 className="font-heading text-[32px] font-bold leading-[1.3] tracking-[-1px]">
             More recipes
           </h2>
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {more.map((r) => (
               <RecipeCard key={r.slug} recipe={r} />
             ))}

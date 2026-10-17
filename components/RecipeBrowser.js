@@ -53,7 +53,7 @@ export default function RecipeBrowser() {
         </div>
 
         {visible.length > 0 ? (
-          <div className="mt-8 grid gap-6 md:gap-8 lg:mt-10 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-6 md:gap-8 lg:mt-10 lg:grid-cols-3">
             {visible.map((recipe, i) => (
   <RecipeCard key={recipe.slug} recipe={recipe} priority={i < 3} />
 ))}

@@ -17,7 +17,7 @@ export default function RecipeCard({ recipe, priority = false }) {
 
   return (
     <article className="flex h-full flex-col gap-4 rounded-[10px] border border-line bg-white p-2">
-      <div className="relative aspect-[6/5] overflow-hidden rounded-md md:aspect-[3/2] lg:aspect-[6/5]">
+      <div className="relative aspect-[327/300] overflow-hidden rounded-md md:aspect-[3/2] lg:aspect-[6/5]">
         <Image
   src={image}
   alt={title}
@@ -42,7 +42,7 @@ export default function RecipeCard({ recipe, priority = false }) {
 
       <Link
         href={`/recipes/${slug}`}
-        className="mt-auto rounded-[10px] bg-ink py-3 text-center font-heading text-[18px] font-bold text-white transition-colors hover:bg-ink-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+        className="mt-auto rounded-[10px] bg-ink py-3 text-center font-heading text-[18px] font-bold leading-[1.4] text-white transition-colors hover:bg-ink-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
       >
         View Recipe
       </Link>

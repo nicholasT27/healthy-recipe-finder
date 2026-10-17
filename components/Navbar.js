@@ -11,7 +11,7 @@ const links = [
 ];
 
 const btn =
-  "rounded-[10px] bg-ink px-4 py-3 font-heading text-[20px] font-bold tracking-[-0.5px] text-white transition-colors hover:bg-ink-soft";
+  "rounded-[10px] bg-ink px-4 py-3 font-heading text-[20px] font-bold leading-[1.4] tracking-[-0.5px] text-white transition-colors hover:bg-ink-soft";
 const linkClass = "font-heading text-[18px] font-semibold tracking-[-0.3px]";
 
 export default function Navbar() {

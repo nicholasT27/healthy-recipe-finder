@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function CallToAction() {
   return (
     <section className="px-4 pt-16 md:px-8 md:pt-20 lg:pt-0">
-      <div className="relative mx-auto flex max-w-[1192px] flex-col items-center gap-8 overflow-hidden rounded-2xl bg-mist px-4 py-12 text-center md:gap-10 md:py-20 lg:py-24">
+      <div className="relative mx-auto flex max-w-[1192px] flex-col items-center gap-8 overflow-hidden rounded-2xl bg-mist px-4 py-12 text-center md:gap-10 md:py-20 lg:py-[98px]">
         <Image
           src="/images/pattern-fork.svg"
           alt=""
@@ -31,7 +31,7 @@ export default function CallToAction() {
 
         <Link
           href="/recipes"
-          className="relative rounded-[10px] bg-ink px-6 py-4 font-heading text-[18px] font-bold text-white transition-colors hover:bg-ink-soft"
+          className="relative rounded-[10px] bg-ink px-6 py-4 font-heading text-[18px] font-bold leading-[1.4] text-white transition-colors hover:bg-ink-soft"
         >
           Browse recipes
         </Link>
