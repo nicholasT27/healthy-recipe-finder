@@ -1,40 +1,52 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
     return (
-        <section id="home" className="px-6 py-12 md:py-20">
-            <div className="mx-auto max-w-7xl">
-                
-                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <section
+            id="home"
+            className="relative isolate overflow-hidden px-4 pt-12 md:px-8 lg:px-6 lg:pb-24 lg:pt-20">
+                <Image 
+                    src="/images/pattern-squiggle-1.svg"
+                    alt=""
+                    width={1440}
+                    height={616}
+                    className="pointer-events-none absolute left-1/2 top-[254px] -z-10 hidden max-w-none -translate-x-1/2 lg:block"
+                />
 
-                    {/* Left: Content */}
-                    <div>
-                        <h1 className="text-3xl font-bold leading tight md:text-5xl lg:text-6xl">
-                            Healthy meals, zero fuss
-                        </h1>
+                <div className="mx-auto flex max-w-[1192px] flex-col gap-10 lg:items-center lg:gap-20">
+                    <div className="flex flex-col items-start gap-8 lg:items-center lg:gap-10">
+                        <div className="flex max-w-[805px] flex-col items-start gap-4 lg:items-center lg:gap-3 lg:text-center">
+                            <h1 className="font-heading text-[52px] font-extrabold leading-[1.1] tracking-[-2px] md:text-[64px] lg:text-[72px]">
+                                <span className="bg-[linear-gradient(to_top,rgba(254,159,107,0.4)_45%,transparent_45%)]">
+                                    Healthy
+                                </span>{" "}
+                                meals, zero fuss
+                            </h1>
 
-                        <p className="mt-6 text-base leading-7 text-gray-600 md:text-lg">
-                            Discover simple, nutritious recipes that make healthy eating easy and enjoyable. 
-                        </p>
+                            <p className="text-[20px] leading-[1.5] tracking-[-0.4px] text-ink-soft lg:max-w-[580px]">
+                                Discover eight quick, whole-food recipes that you can cook tonight-no processed junk, no guesswork.
+                            </p>
+                        </div>
 
-                        <button className="mt-8 rounded-full bg-green-700 px-6 py-3 text-white transition-colors hover:bg-green-800">
-                            Start exploring
-                        </button>
+                        <Link 
+                            href="/recipes"
+                            className="rounded-[10px] bg-ink px-8 py-4 font-heading text-[20px] font-bold tracking--[-0.5px] text-white transition-colors hover:bg-ink-soft">
+                                Start exploring
+                        </Link>
                     </div>
 
-                    {/* Right: Image */}
-                    <div className="overflow-hidden rounded-3xl">
+                    <div className="relative h-[200px] w-full overflow-hidden rounded-[4px] shadow-[0_0_0_12px_white] md:h-[350px] md:rounded-[7px] lg:h-[530px] lg:rounded-xl">
                         <Image
-                            src="/images/banana-pancakes-large.webp"
-                            alt="Healthy breakfast"
-                            width={600}
-                            height={500}
-                            className="h-64 w-full object-cover md:h-96 lg:h-[450px]"
+                            src="/images/image-home-hero-large.webp"
+                            alt="Woman preparing a salad in a bright kitchen"
+                            fill
+                            sizes="(min-width: 1192px) 1192px, 100vw"
+                            className="object-cover"
                             priority
                         />
                     </div>
                 </div>
-            </div>
-        </section>
-    )
+            </section>
+    );
 }

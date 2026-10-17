@@ -1,56 +1,75 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/recipes", label: "Recipes" },
+];
+
+const btn =
+  "rounded-[10px] bg-ink px-4 py-3 font-heading text-[20px] font-bold tracking-[-0.5px] text-white transition-colors hover:bg-ink-soft";
+const linkClass = "font-heading text-[18px] font-semibold tracking-[-0.3px]";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
-    const [isOpen, setIsOpen] = useState(false);
+  return (
+    <header className="border-b border-line">
+      <nav className="flex items-center justify-between p-4 md:px-8 md:pb-5 md:pt-8 lg:px-[60px] lg:py-5">
+        <Link href="/" className="lg:w-[260px]">
+          <Image
+            src="/images/logo.svg"
+            alt="Healthy Recipe Finder"
+            width={260}
+            height={40}
+            className="h-8 w-auto md:h-10"
+            priority
+          />
+        </Link>
 
-    return (
-        <nav className="py-6">
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-            
-                <Image 
-                    src="/images/logo.svg"
-                    alt="Recipe Finder Logo"
-                    width={150}
-                    height={40}
-                />
+        <div className="hidden flex-1 items-center justify-center gap-10 lg:flex">
+          {links.map(({ href, label }) => (
+            <Link key={href} href={href} className={`${linkClass} relative pb-1`}>
+              {label}
+              {isActive(href) && (
+                <span className="absolute bottom-0 left-0 h-[3px] w-full rounded bg-orange" />
+              )}
+            </Link>
+          ))}
+        </div>
 
-                <div className="hidden items-center gap-8 text-sm font-medium md:flex">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#recipes">Recipes</a>
-                    <button className="rounded-full bg-green-700 px-5 py-3 text-white">Browse recipes</button>
-                </div>
+        <div className="hidden w-[260px] justify-end lg:flex">
+          <Link href="/recipes" className={btn}>Browse recipes</Link>
+        </div>
 
-                {/* Mobile Hamburger Button */}
-                <button
-                    className="md:hidden"
-                    onClick={() => setIsOpen(!isOpen)}
-                    aria-label={isOpen ? "Close menu" : "Open menu"}
-                    aria-expanded={isOpen}
-                >
-                    {isOpen ? "x" : "☰"}
-                </button>
+        <button
+          className="grid size-10 place-items-center rounded bg-line lg:hidden"
+          onClick={() => setOpen(!open)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+        >
+          <Image src="/images/icon-hamburger-menu.svg" alt="" width={18} height={16} />
+        </button>
+      </nav>
 
-            </div>
-
-            {/* Mobile Navigation */}
-            {isOpen && (
-            <div className="flex flex-col gap-4 px-6 py-4 md:hidden">
-                <a href="#home" onClick={() => setIsOpen(false)}>Home</a>
-                <a href="#about" onClick={() => setIsOpen(false)}>About</a>
-                <a hred="#recipes" onClick={() => setIsOpen(false)}>Recipes</a>
-
-                <a 
-                    href="#recipes"
-                    onClick={() => setIsOpen(false)}
-                    className="rounded-full bg-green-700 px-5 py-3 text-white">
-                    Browse Recipes
-                </a>
-            </div>
-            )}
-        </nav>
-    )
+      {open && (
+        <div className="flex flex-col gap-4 px-4 pb-4 md:px-8 lg:hidden">
+          {links.map(({ href, label }) => (
+            <Link key={href} href={href} className={linkClass} onClick={() => setOpen(false)}>
+              {label}
+            </Link>
+          ))}
+          <Link href="/recipes" className={`${btn} text-center`} onClick={() => setOpen(false)}>
+            Browse recipes
+          </Link>
+        </div>
+      )}
+    </header>
+  );
 }
