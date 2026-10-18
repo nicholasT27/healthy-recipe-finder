@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Healthy Recipe Finder
 
-## Getting Started
+A responsive recipe-browsing website built with Next.js and Tailwind CSS, based on the Frontend Mentor "Healthy Recipe Finder" challenge and rebuilt to match the Figma design across mobile, tablet and desktop.
 
-First, run the development server:
+**Live site:** [healthy-recipe-finder.pages.dev](https://healthy-recipe-finder.pages.dev)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![Healthy Recipe Finder homepage](./screenshots/home.png)
+
+## Features
+
+- **Home page** with a hero section, three feature highlights, a "Built for real life" section and a call to action.
+- **Recipes page** listing eight recipes as cards, with:
+  - a **Max Prep Time** filter and a **Max Cook Time** filter (radio-style dropdowns with a Clear option),
+  - a **search bar** that matches recipe names and ingredients,
+  - filters and search that combine, with a friendly message when nothing matches.
+- **Recipe detail pages** (one per recipe) with a breadcrumb, a large photo, servings, prep and cook times, an ingredients list, step-by-step instructions and a "More recipes" section.
+- **About page** with the project's mission, "Why we exist", food philosophy and "Beyond the plate" sections.
+- **Fully responsive** layouts for mobile (375px), tablet (768px) and desktop (1440px), with a hamburger menu on smaller screens.
+- Accessible details: semantic HTML, keyboard-friendly filter dropdowns (Escape closes them), visible focus outlines and descriptive image alt text.
+
+## Tech stack
+
+- [Next.js](https://nextjs.org) (App Router) and React
+- [Tailwind CSS](https://tailwindcss.com) v4 with custom design tokens (colours, fonts)
+- JavaScript
+- `next/font` for Nunito and Nunito Sans, `next/image` for images
+- Deployed on [Cloudflare Pages](https://pages.cloudflare.com) as a static export
+
+## Project structure
+
+```
+app/
+  layout.js            Shared layout: navbar, footer, fonts
+  page.js              Home page
+  about/page.js        About page
+  recipes/page.js      Recipes list page
+  recipes/[slug]/      Recipe detail pages (generated at build time)
+components/            Navbar, Hero, RecipeCard, RecipeBrowser, FilterSelect, ...
+data/recipes.js        The eight recipes (content, times, images)
+public/images/         Photos, icons and decorative patterns
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Getting started
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Requires Node.js 20 or newer.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+git clone https://github.com/nicholasT27/healthy-recipe-finder.git
+cd healthy-recipe-finder
+npm install
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+To create the production build (a static site in the `out` folder):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+The site is exported as static HTML (`output: "export"` in `next.config.mjs`) and hosted on Cloudflare Pages. Every push to `main` triggers a new build.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Setting | Value |
+| --- | --- |
+| Framework preset | Next.js (Static HTML Export) |
+| Build command | `npx next build` |
+| Build output directory | `out` |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## What I learned
+
+- Matching a Figma design closely at three breakpoints, including measuring section heights against the design to find small differences.
+- Using aspect ratios instead of fixed heights so images scale smoothly between breakpoints.
+- Building a filterable, searchable list with React state in the App Router.
+- Generating dynamic pages with `generateStaticParams` and deploying a Next.js app as a static site.
+
+## Credits
+
+- Design and challenge brief by [Frontend Mentor](https://www.frontendmentor.io).
+- Recipe photos and icons are from the Frontend Mentor challenge assets. Recipe details for most recipes are my own writing.
