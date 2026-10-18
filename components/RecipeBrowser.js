@@ -39,7 +39,7 @@ export default function RecipeBrowser() {
             />
           </div>
 
-          <label className="flex w-full items-center gap-2 rounded-[10px] border border-line bg-white px-4 py-2.5 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ink md:w-[260px] lg:w-[310px]">
+          <label className="flex w-full items-center gap-2 rounded-[10px] border border-line bg-white px-4 py-2.5 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ink md:w-[320px] lg:w-[310px]">
             <Image src="/images/icon-search.svg" alt="" width={20} height={21} />
             <input
               type="text"
@@ -47,7 +47,7 @@ export default function RecipeBrowser() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by name or ingredient…"
-              className="min-w-0 flex-1 bg-transparent text-[20px] leading-[1.35] tracking-[-0.3px] outline-none placeholder:text-ink-soft md:text-[16px] lg:text-[20px]"
+              className="min-w-0 flex-1 bg-transparent text-[20px] leading-[1.35] tracking-[-0.3px] outline-none placeholder:text-ink-soft md:text-[16px] lg:text-[18px]"
             />
           </label>
         </div>

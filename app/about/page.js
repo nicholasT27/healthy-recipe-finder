@@ -44,7 +44,7 @@ export default function About() {
     return (
         <>
             {/* Our mission */}
-            <section className="px-4 md:px-8">
+            <section className="overflow-x-clip px-4 md:px-8">
                 <div className="mx-auto flex max-w-[1192px] flex-col gap-10 pb-16 pt-12 md:gap-16 md:pb-20 md:pt-16 lg:flex-row lg:items-center lg:gap-16 lg:pb-24 lg:pt-20">
                     <div className="flex flex-col items-start gap-6 lg:w-[510px] lg:shrink-0">
                         <span className="rounded-md bg-orange px-1.5 py-0.5 font-heading text-[20px] font-bold leading-[1.4] tracking-[-0.5px]">
@@ -59,7 +59,7 @@ export default function About() {
                         </div>
                     </div>
 
-                    <div className="relative h-[333px] w-full md:h-[683px] lg:h-[600px] lg:w-[618px] lg:shrink-0">
+                    <div className="relative aspect-[343/333] w-full md:aspect-[704/683] lg:aspect-auto lg:h-[600px] lg:w-[618px] lg:shrink-0">
                         <div className="relative h-full w-full overflow-hidden rounded-xl">
                             <Image
                                 src="/images/image-about-our-mission-large.webp"
@@ -75,7 +75,7 @@ export default function About() {
                             alt=""
                             width={201}
                             height={144}
-                            className="pointer-events-none absolute bottom-[110px] right-2 hidden h-auto w-[140px] md:block"
+                            className="pointer-events-none absolute bottom-[110px] hidden h-auto lg:-right-[110px] lg:block lg:w-[204px]"
                         />
                     </div>
                 </div>
@@ -104,7 +104,7 @@ export default function About() {
                         </div>
                     </div>
 
-                    <div className="relative h-[184px] w-full overflow-hidden rounded-xl md:h-[378px] lg:h-[400px] lg:w-[744px] lg:shrink-0">
+                    <div className="relative aspect-[343/184] w-full overflow-hidden rounded-xl md:aspect-[704/378] lg:aspect-auto lg:h-[400px] lg:w-[744px] lg:shrink-0">
                         <Image
                             src="/images/image-about-beyond-the-plate-large.webp"
                             alt="Family having fun preparing food in the kitchen"

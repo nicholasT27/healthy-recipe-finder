@@ -51,7 +51,7 @@ export default function FilterSelect({ label, name, options, value, onChange }) 
         <div
           role="radiogroup"
           aria-label={label}
-          className="absolute left-0 top-full z-20 mt-2 w-[240px] rounded-[10px] border border-line bg-white py-1 shadow-lg"
+          className="absolute left-0 top-full z-20 mt-2 w-full overflow-hidden rounded-[10px] border border-line bg-white py-2 shadow-lg md:w-[240px]"
         >
           {options.map((n) => (
             <label

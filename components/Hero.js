@@ -5,7 +5,7 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="relative isolate overflow-hidden px-4 pt-12 md:px-8 lg:px-6 lg:pb-24 lg:pt-20">
+            className="relative isolate overflow-x-clip px-4 pt-12 md:px-8 lg:px-6 lg:pb-24 lg:pt-20">
                 <Image 
                     src="/images/pattern-squiggle-1.svg"
                     alt=""
@@ -36,7 +36,7 @@ export default function Hero() {
                         </Link>
                     </div>
 
-                    <div className="relative h-[200px] w-full overflow-hidden rounded-[4px] shadow-[0_0_0_12px_white] md:h-[350px] md:rounded-[7px] lg:h-[530px] lg:rounded-xl">
+                    <div className="relative aspect-[343/200] w-full overflow-hidden rounded-[4px] shadow-[0_0_0_12px_white] md:aspect-[704/350] md:rounded-[7px] lg:aspect-[1192/530] lg:rounded-xl">
                         <Image
                             src="/images/image-home-hero-large.webp"
                             alt="Woman preparing a salad in a bright kitchen"

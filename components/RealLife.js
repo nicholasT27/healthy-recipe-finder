@@ -22,7 +22,7 @@ export default function RealLife() {
           </p>
         </div>
 
-        <div className="relative h-[243px] w-full overflow-hidden rounded-[10px] md:h-[499px] md:rounded-2xl lg:h-[450px]">
+        <div className="relative aspect-[343/243] w-full overflow-hidden rounded-[10px] md:aspect-[704/499] md:rounded-2xl lg:aspect-[572/450]">
             <Image
                 src="/images/image-home-real-life-large.webp"
                 alt="Chopping greens on a wooden board"

@@ -10,14 +10,14 @@ export default function CallToAction() {
           alt=""
           width={315}
           height={391}
-          className="absolute hidden h-auto md:-left-12 md:top-[182px] md:block md:w-[179px] lg:-left-[73px] lg:top-[23px] lg:w-[315px]"
+          className="pointer-events-none absolute -left-8 bottom-[-20px] h-auto w-[120px] md:-left-12 md:bottom-auto md:top-[182px] md:w-[179px] lg:-left-[73px] lg:top-[23px] lg:w-[315px]"
         />
         <Image
           src="/images/pattern-knife.svg"
           alt=""
           width={339}
           height={339}
-          className="absolute hidden h-auto md:-right-[21px] md:-top-[50px] md:block md:w-[172px] lg:-right-[70px] lg:top-6 lg:w-[339px]"
+          className="pointer-events-none absolute -right-6 -top-6 h-auto w-[110px] md:-right-[21px] md:-top-[50px] md:w-[172px] lg:-right-[70px] lg:top-6 lg:w-[339px]"
         />
 
         <div className="relative flex flex-col gap-3">
